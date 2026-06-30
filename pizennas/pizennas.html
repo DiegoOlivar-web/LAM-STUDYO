@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAM STUDYO | Pizennas</title>
+    <link rel="stylesheet" type="text/css" href="../assets/header&footer.css">
+    <link rel="stylesheet" type="text/css" href="pizennas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="pizennas.js"defer></script>
+    <script src="../assets/header&footer.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="logo" href="../index/index.html">
+            <img src="../assets/img/LAM-studyo-logo.png" alt="Logo LAM STUDYO">
+        </a>
+        <nav id="navbar">
+            <a href="../index/index.html">Inicio</a>
+            <a href="../index/index.html#servicios">Servicios</a>
+            <a href="../index/index.html#proyectos">Proyectos</a>
+            <a href="../index/index.html#contacto">Contacto</a>
+        </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="hero" style="background-image: url('../assets/img/pizennas/portada.png'); background-position: 50% -18%; background-size: cover;">
+        <div class="slide-content-wrapper">
+            <div class="text-side-wrapper"> <div class="text-side">
+                    <h2>PIZENNAS</h2>
+                    <p>Construimos una identidad visual sólida con dirección creativa, fotografía y contenido estratégico que posiciona la esencia de la marca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="grid-container">
+        <!-- --- Card: Reels --- -->
+        <div class="item">
+            <div class="text">
+                <h2>01</h2>
+                <h3>REELS</h3>
+                <p>Se desarrolló una estrategia enfocada en  tyling y productos clave para fortalecer el posicionamiento de Pizennas.</p>
+                <button class="btn-primary open-modal-btn" data-target="modal-reels">
+                    <i class="fa-brands fa-google-play"></i> VER REELS
+                </button>
+            </div>
+            <div class="image" style="background-image: url('../assets/img/pizennas/reels.png');"></div>
+        </div>
+
+        <!-- --- Card: Fotografía --- -->
+        <div class="item reverse">
+            <div class="image" style="background-image: url('../assets/img/pizennas/fotografia.png');"></div>
+            <div class="text">
+                <h2>02</h2>
+                <h3>FOTOGRAFÍA</h3>
+                <p>Se trabajó una dirección fotográfica alineada con el posicionamiento y estética de Pizennas.</p>    
+                <button class="btn-primary open-modal-btn" data-target="modal-fotografia">
+                    <i class="fa-brands fa-google-play"></i> VER FOTOGRAFÍAS
+                </button>
+                
+            </div>
+        </div>
+
+        <!-- --- Card: Estrategia Visual y Contenido --- -->
+        <div class="item">  
+            <div class="text">
+                <h2>03</h2>
+                <h3>ESTRATEGIA VISUAL Y CONTENIDO</h3>
+                <p>Se desarrolló una estrategia visual y de contenido para fortalecer la identidad de marca y potenciar su presencia digital.</p>
+                <button class="btn-primary open-modal-btn" data-target="modal-portadas">
+                    <i class="fa-brands fa-google-play"></i> VER CONTENIDO
+                </button>
+            </div>
+            <div class="image" style="background-image: url('../assets/img/pizennas/contenido.png');"></div>
+        </div>
+    </section>
+    
+    <!-- ##### Modales ##### -->
+    <!-- Estrategia Visual y Contenido -->
+    <div id="modal-portadas" class="modal-container">
+        <div class="modal-content">
+            
+            <button class="close-modal-btn">&times;</button>
+
+            <div class="modal-hero">
+                <img src="../assets/img/pizennas/contenido.png" alt="Nueva Colección Reels"> 
+            </div>
+            <div class="foto-header">
+                <h1>ESTRATEGIA VISUAL Y CONTENIDO</h1>
+                <p>Dirección creativa, desarrollo de feed y contenido digital para construir una identidad visual coherente y fortalecer la presencia de marca.</p>
+            </div>
+
+            <!-- --- VISUAL --- -->
+            <div class="foto-grid">
+                <img src="../assets/img/pizennas/modal-estrategia-visual1.jpeg" alt="Estrategia visual 1">
+                <img src="../assets/img/pizennas/modal-estrategia-visual2.jpeg" alt="Estrategia visual 2">
+                <img src="../assets/img/pizennas/modal-estrategia-visual3.jpeg" alt="Estrategia visual 3">
+            </div>
+            
+            <!-- --- STORIES --- -->
+            <div class="foto-header">
+                <h1>STORIES</h1>
+                <p>Creamos contenido dinámico para conectar con la audiencia, comunicar productos, campañas y generar interacción mediante una narrativa visual.</p>
+            </div>
+
+            <div class="foto-grid">
+                <div class="reel-item">
+                    <div class="reel-media">
+                        <video class="video-reel" src="../assets/video/pizzenas/modal-stories-story1.mp4" playsinline loop muted></video>
+                        <button class="play-btn">
+                            <span class="icon">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="reel-item">
+                    <div class="reel-media">
+                        <video class="video-reel" src="../assets/video/pizzenas/modal-stories-story2.mp4" playsinline loop muted></video>
+                        <button class="play-btn">
+                            <span class="icon">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="reel-item">
+                    <div class="reel-media">
+                        <video class="video-reel" src="../assets/video/pizzenas/modal-stories-story3.mp4" playsinline loop muted></video>
+                        <button class="play-btn">
+                            <span class="icon">▶</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reels -->
+    <div id="modal-reels" class="modal-container">
+        <div class="modal-content reels-content">
+            <button class="close-modal-btn">&times;</button>
+            
+            <div class="modal-hero">
+                <img src="../assets/img/pizennas/reels.png" alt="Nueva Colección Reels"> 
+            </div>
+
+            <div class="reels-header">
+                <h1>REELS</h1>
+            </div>
+
+            <div class="reels-grid">
+                <div class="reel-item">
+                    <div class="reel-media">
+                        <video class="video-reel" src="../assets/video/pizzenas/modal-reels-reels1.mp4" playsinline loop muted></video>
+                        <button class="play-btn">
+                            <span class="icon">▶</span>
+                        </button>
+                    </div>
+                    <div class="reel-info">
+                        <h4>DROP AMARELLY</h4>
+                        <p>Teaser Launch</p>
+                    </div>
+                </div>
+                <div class="reel-item">
+                    <div class="reel-media">
+                        <video class="video-reel" src="../assets/video/pizzenas/modal-reels-reels2.mp4" playsinline loop muted></video>
+                        <button class="play-btn">
+                            <span class="icon">▶</span>
+                        </button>
+                    </div>
+                    <div class="reel-info">
+                        <h4>DROP AMARELLY</h4>
+                        <p>Content Creation</p>
+                    </div>
+                </div>
+                <div class="reel-item">
+                    <div class="reel-media">
+                        <video class="video-reel" src="../assets/video/pizzenas/modal-reels-reels3.mp4" playsinline loop muted></video>
+                        <button class="play-btn">
+                            <span class="icon">▶</span>
+                        </button>
+                    </div>
+                    <div class="reel-info">
+                        <h4>DROP AMARELLY</h4>
+                        <p>Teaser Launch</p>
+                    </div>
+                </div>
+                <div class="reel-item">
+                    <div class="reel-media">
+                        <video class="video-reel" src="../assets/video/pizzenas/modal-reels-reels4.mp4" playsinline loop muted></video>
+                        <button class="play-btn">
+                            <span class="icon">▶</span>
+                        </button>
+                    </div>
+                    <div class="reel-info">
+                        <h4>COATS SEASON</h4>
+                        <p>Content Creation</p>
+                    </div>
+                </div>
+                <div class="reel-item">
+                    <div class="reel-media">
+                        <video class="video-reel" src="../assets/video/pizzenas/modal-reels-reels5.mp4" playsinline loop muted></video>
+                        <button class="play-btn">
+                            <span class="icon">▶</span>
+                        </button>
+                    </div>
+                    <div class="reel-info">
+                        <h4>COATS SEASON</h4>
+                        <p>Content Creation</p>
+                    </div>
+                </div>
+                <div class="reel-item">
+                    <div class="reel-media">
+                        <video class="video-reel" src="../assets/video/pizzenas/modal-reels-reels6.mp4" playsinline loop muted></video>
+                        <button class="play-btn">
+                            <span class="icon">▶</span>
+                        </button>
+                    </div>
+                    <div class="reel-info">
+                        <h4>COATS SEASON</h4>
+                        <p>Content Creation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fotografia -->
+    <div id="modal-fotografia" class="modal-container">
+        <div class="modal-content foto-content">
+            <button class="close-modal-btn">&times;</button>
+            
+            <div class="foto-header">
+                <h1>FOTOGRAFÍA</h1>
+                <p>Capturando la esencia y elegancia atemporal en cada toma.</p>
+            </div>
+
+            <div class="foto-grid">
+                <img src="../assets/img/pizennas/modal-fotografia-foto1.jpg" alt="Editorial Amarelly 1">
+                <img src="../assets/img/pizennas/modal-fotografia-foto2.jpg" alt="Editorial Amarelly 2">
+                <img src="../assets/img/pizennas/modal-fotografia-foto3.jpg" alt="Editorial Amarelly 3">
+                <img src="../assets/img/pizennas/modal-fotografia-foto4.jpg" alt="Editorial Amarelly 4">
+                <img src="../assets/img/pizennas/modal-fotografia-foto5.jpg" alt="Editorial Amarelly 5">
+                <img src="../assets/img/pizennas/modal-fotografia-foto6.jpg" alt="Editorial Amarelly 6">
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MODAL CONTACTO ================= -->
+        <dialog id="modal-contacto" class="modal-oscuro">
+            <div class="modal-header">
+                <h3>Reserva tu sesión</h3>
+                <button class="btn-cerrar-modal" id="btn-cerrar-contacto"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="formulario-contacto" class="custom-form">
+                <div class="form-row">
+                    <div class="form-group half">
+                        <input type="text" id="nombres" placeholder="Nombres" required>
+                    </div>
+                    <div class="form-group half">
+                        <input type="text" id="apellidos" placeholder="Apellidos" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="correo" placeholder="Correo electrónico (opcional para WhatsApp)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="marca" placeholder="Cuentanos sobre tu marca" required>
+                </div>
+
+                <p class="form-question">¿Cómo te gustaría comunicarte con nosotros?</p>
+                
+                <div class="form-actions">
+                    <button type="button" id="btn-whatsapp" class="btn-rojo">Whatssap</button>
+                    <button type="button" id="btn-correo" class="btn-rojo">Correo</button>
+                </div>
+            </form>
+        </dialog>
+
+    <!-- ================= PIE ================= -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col brand-col">
+                <a class="logo" href="../index/index.html">
+                    <img src="../assets/img/LAM-studyo-logo.png" alt="Logo LAM STUDYO">
+                </a>
+                <p>Estudio creativo especializado en fotografía, videografía y contenido visual de alto impacto.</p>
+            </div>
+            <div class="footer-col">
+                <h4>NAVEGACIÓN</h4>
+                <a href="../index/index.html">Inicio</a>
+                <a href="../index/index.html#servicios">Servicios</a>
+                <a href="../index/index.html#proyectos">Proyectos</a>
+                <a href="../index/index.html#contacto">Contacto</a>
+            </div>
+            <div class="footer-col">
+                <h4>REDES SOCIALES</h4>
+                <a href="https://www.instagram.com/lamstudyo.peru/"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@lamstudyo.peru"><i class="fab fa-tiktok"></i> TikTok</a>
+                <a href="https://wa.me/51922787599"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACTO</h4>
+                <p><i class="fa-solid fa-envelope"></i> lamstudyoperu@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> (+51) 922787599</p>
+                <p><i class="fa-solid fa-location-dot"></i> Lima, Perú</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>LAM STUDYO © 2026 - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ===== WHATSAPP FLOTANTE ===== -->
+    <button class="btn-whatsapp-flotante trigger-modal" aria-label="Contactar">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
+    
+    <!-- ===== SCRIPT DE EMAILJS ===== -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({ publicKey: "EWDjQskzs24Gc_ekC" }); // Obtén tu clave pública en el dashboard
+    })();
+    </script>
+</body>
+</html>

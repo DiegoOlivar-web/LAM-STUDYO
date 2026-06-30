@@ -1,0 +1,441 @@
+/* ================= VARIABLES & RESET ================= */
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-darker: #000000;
+    --text-light: #ffffff;
+    --text-muted: #a0a0a0;
+    --font-main: 'Montserrat', sans-serif;
+    --font-accent: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+
+em {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ================= HEADER ================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: black;
+    transition: transform 0.4s ease-in-out;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.logo {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 90px;
+    height: auto;
+}
+
+nav a {
+    margin-left: 30px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--text-muted);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ================= REELS ================= */
+.reels-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* Sistema de Grilla 3x3 */
+.reels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 30px; /* Espaciado vertical y horizontal */
+}
+
+.reel-item {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor que mantiene la proporción */
+.reel-media {
+    width: 100%;
+    height: 100%; /* Define aquí la altura fija que desees para todas tus tarjetas */
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #000;
+}
+
+/* El video se adapta exactamente a la caja */
+.reel-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta el video para llenar el espacio sin deformarse */
+    display: block;
+}
+
+/* Opcional: Estilo de los controles (la mayoría de navegadores los adapta automáticamente) */
+.reel-media video::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.5); /* Controles oscuros para que se vean bien */
+}
+
+/* Textos informativos de cada Reel */
+.reel-info {
+    text-align: left;
+}
+
+.reel-info h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.reel-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    font-weight: 300;
+}
+
+/* ================= BOTON PLAY ================= */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65px;
+    height: 65px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    backdrop-filter: blur(3px);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.play-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 10px 0 10px 18px;
+    border-color: transparent transparent transparent #ffffff;
+}
+
+.play-btn:hover { background: rgba(0, 0, 0, 0.8); }
+.play-btn.hidden { display: none; } /* Ocultar al reproducir */
+
+.media-container:hover .play-btn {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* ================= CONTACTO ================= */
+.contacto {
+    background-color: var(--bg-darker);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 10%;
+    gap: 50px;
+    border-bottom: 1px solid #222;
+}
+
+.cta-video {
+    position: relative;
+    width: 250px;
+    height: auto;
+}
+
+.cta-text h2 {
+    font-size: 2.2rem;
+    font-weight: 250;
+    margin-bottom: 20px;
+}
+
+.cta-text p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* ================= FORMULARIO CONTACTO ================= */
+.custom-form {
+    width: 100%;
+    max-width: 450px;
+    margin-top: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.form-group.half {
+    width: 50%;
+}
+
+.custom-form input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 8px 0;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.custom-form input::placeholder {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.custom-form input:focus {
+    border-bottom: 2px solid var(--text-muted);
+}
+
+.form-question {
+    margin: 10px 0 20px;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--text-light);
+    padding: 12px 24px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--text-light);
+    color: var(--bg-dark);
+}
+
+/* ================= MODAL DE CONTACTO ================= */
+button.btn-whatsapp {
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-light);
+    font-family: var(--font-main);
+}
+
+.modal-oscuro {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+    border: 1px solid #333;
+    padding: 30px 40px;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 8px;
+    margin: auto; /* Centra el modal */
+}
+
+.modal-oscuro::backdrop {
+    background: rgba(0, 0, 0, 0.85); /* Fondo semitransparente oscuro */
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.btn-cerrar-modal {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btn-cerrar-modal:hover {
+    color: var(--text-muted);
+}
+
+.btn-rojo {
+    background-color: #b31212; /* Color rojo basado en la imagen */
+    color: #ffffff;
+    border: none;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1; /* Hace que ambos botones midan lo mismo */
+    transition: background-color 0.3s;
+    font-family: var(--font-main);
+}
+
+.btn-rojo:hover {
+    background-color: #8a0e0e;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: var(--bg-darker);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 15px 5%;
+    gap: 30px;
+}
+
+.footer-col h4 {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-col a, .footer-col p {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.footer-col a:hover {
+    color: var(--text-light);
+}
+
+.brand-col .logo {
+    display: flex;
+    justify-self: center;
+    margin-bottom: 20px;
+}
+
+.brand-col p { text-align: center; }
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #ffffff;
+    border-top: 1px solid #222;
+}
+
+/* ================= WHATSAPP FLOTANTE ================= */
+.btn-whatsapp-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: #25d366;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+
+    /* Ajustes para la fuente */
+    color: white;
+    font-size: 30px; /* Controla el tamaño del ícono */
+
+    /* Centrado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    animation: pulse-whatsapp 2s infinite;
+}
+
+@keyframes pulse-whatsapp {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.btn-whatsapp-flotante:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* ================= DISEÑO RESPONSIVO ================= */
+@media (max-width: 768px) {
+    .cta-section { flex-direction: column; text-align: center; }
+    .contacto { flex-direction: column; text-align: center; }
+}

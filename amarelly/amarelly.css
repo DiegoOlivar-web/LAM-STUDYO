@@ -1,0 +1,493 @@
+.hero {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 0 5%;
+}
+
+.text-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    z-index: 2;
+    margin-top: 90px;
+}
+
+.text-side h2 {
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 
+        0 0 5px rgb(255, 255, 255),    /* Capa 1: Sombra muy difusa cerca */
+        0 0 10px rgb(157, 157, 157),   /* Capa 2: Un poco más grande */
+        0 0 20px rgb(255, 255, 255),   /* Capa 3: Más grande, menos opaca */
+        0 0 40px rgb(255, 255, 255);   /* Capa 4: Resplandor amplio */
+}
+
+.text-side p {
+    font-size: 2rem;
+    line-height: 1.5;
+    font-family: poppins, sans-serif;
+}
+
+.btn-primary {
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid var(--text-light);
+    align-self: center;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    max-width: 350px;
+}
+
+.btn-primary i {
+    margin-right: 8px;
+}
+
+.btn-primary:hover {
+    background: var(--text-light);
+    color: var(--bg-dark);
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 600px;
+}
+
+.image {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.text {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.text h3 {
+    margin-bottom: 30px;
+}
+
+/* --- ESTILOS DEL MODAL BASE PORTADA --- */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    
+    /* Control de estado con opacidad para transiciones suaves */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    
+    z-index: 99999 !important; 
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    overflow-y: auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Estado Activo (inyectado por JS) */
+.modal-container.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    max-width: 1000px;
+    padding: 60px 50px;
+    position: relative;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    
+    /* Efecto de desplazamiento sutil al abrir */
+    transform: translateY(-20px);
+    transition: transform 0.4s ease;
+}
+
+.modal-container.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Botón Cerrar Estilizado */
+.close-modal-btn {
+    position: absolute !important;
+    top: 15px !important;
+    right: 20px !important;
+    color: #ffffff !important;
+    font-size: 45px !important;
+    background: transparent !important;
+    border: none !important;
+    z-index: 100000 !important;
+    cursor: pointer;
+    line-height: 1 !important;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8); /* Añade sombra por si hay fotos blancas de fondo */
+}
+.close-modal-btn:hover {
+    opacity: 0.7;
+}
+
+/* Estilo para convertir el enlace original en un botón compatible */
+.btn-primary.open-modal-btn {
+    background: none;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: background 0.3s, color 0.3s;
+}
+.btn-primary.open-modal-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* --- DISEÑO EDITORIAL (GRID / FILAS) --- */
+.modal-header h1 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.modal-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.grid-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.grid-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Contenedor que mantiene la proporción */
+.media-container {
+    width: 100%;
+    height: 400px; /* Define aquí la altura fija que desees para todas tus tarjetas */
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    background-color: #000;
+}
+
+/* El video se adapta exactamente a la caja */
+.media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta el video para llenar el espacio sin deformarse */
+    display: block;
+}
+
+.text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-container h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.text-container p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cccccc;
+    font-weight: 300;
+}
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS: MODAL REELS
+   ========================================== */
+
+/* Contenedor más ancho para acomodar las 3 columnas */
+.modal-content.reels-content {
+    max-width: 1100px;
+    padding: 50px 60px;
+}
+
+/* Banner Hero (Imagen del celular superior) */
+.modal-hero {
+    width: 100%;
+    height: 450px;
+    margin-bottom: 50px;
+    background-color: #050505;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.modal-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%; /* Ajusta el encuadre vertical de la imagen */
+}
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS: MODAL FOTOGRAFÍA
+   ========================================== */
+
+/* Contenedor principal de la galería */
+.modal-content.foto-content {
+    max-width: 1200px;
+    padding: 50px 60px;
+    background-color: #030303; /* Un negro ligeramente más profundo */
+}
+
+/* Cabecera del modal fotográfico */
+.foto-header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.foto-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.foto-header p {
+    font-family: 'Montserrat', sans-serif;
+    color: #888888;
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Grilla estilo Masonry (Flexbox Columns) */
+.foto-grid {
+    display: grid;
+    /* Esto crea 3 columnas iguales automáticamente */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; /* Espacio entre imágenes */
+    width: 100%;
+}
+
+.foto-grid img {
+    width: 100%;
+    height: 100%; /* Altura fija para mantener todas las filas alineadas */
+    object-fit: cover; /* Corta la imagen para que llene el cuadrado sin deformarse */
+    border-radius: 3px;
+    filter: grayscale(15%) brightness(0.9);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.foto-grid img:hover {
+    transform: scale(1.03);
+    filter: grayscale(0%) brightness(1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.foto-column {
+    flex: 33.33%;
+    max-width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilos individuales de cada fotografía */
+.foto-column img {
+    width: 100%;
+    height: auto; /* Permite imágenes verticales u horizontales sin deformarse */
+    display: block;
+    border-radius: 3px;
+    object-fit: cover;
+    background-color: #111;
+    
+    /* Efecto editorial: ligéramente apagadas hasta el hover */
+    filter: grayscale(15%) brightness(0.9);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.foto-column img:hover {
+    transform: scale(1.02);
+    filter: grayscale(0%) brightness(1); /* Despierta el color de la foto */
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--text-muted);
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+    }
+    nav.active { display: flex; }
+    nav a { margin: 15px 0; }
+    .cta-section { flex-direction: column; text-align: center; }
+    .contacto { flex-direction: column; text-align: center; }
+    .footer-grid { grid-template-columns: 1fr 1fr; text-align: center; }
+
+    /* === MODAL === */
+    .grid-row, .grid-row.reverse {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .modal-content {
+        padding: 50px 20px 30px 20px !important; /* Deja espacio arriba para la X */
+    }
+    .modal-header h1 {
+        font-size: 2rem;
+    }
+    /* 1. Pasamos el contenedor a formato vertical y altura automática */
+    .item, .item.reverse {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important; /* Evita que el texto se salga de su caja */
+    }
+
+    /* 2. Le damos una altura absoluta a la imagen para que no desaparezca */
+    .item .image {
+        width: 100% !important;
+        height: 380px !important; 
+        min-height: 380px !important;
+        order: 1 !important; /* Fuerza a que la imagen siempre vaya ARRIBA */
+    }
+
+    /* 3. El contenedor de texto va ABAJO */
+    .item .text {
+        width: 100% !important;
+        height: auto !important;
+        order: 2 !important; /* Fuerza a que el texto siempre vaya ABAJO */
+        padding: 4rem 1.5rem !important; 
+    }
+
+    /* Ajuste de tipografías móviles */
+    .text h2 { font-size: 2.5rem !important; }
+    .text h3 { font-size: 1.5rem !important; margin-bottom: 20px !important; }
+    
+    .text p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .btn-primary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE MODAL REELS
+   ========================================== */
+@media (max-width: 992px) {
+    .reels-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en Tablets */
+    }
+
+    .foto-column {
+        flex: 50%; /* Pasa a 2 columnas en Tablets */
+        max-width: 50%;
+    }
+
+    .foto-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .item {
+        height: 450px; /* Reducimos la altura fija para que no quede tanto espacio vacío */
+    }
+    
+    .text {
+        padding: 2rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-section { flex-direction: column; text-align: center; }
+    .contacto { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 600px) {
+    .modal-content.reels-content {
+        padding: 40px 20px;
+    }
+    .modal-hero {
+        height: 250px; /* Banner más corto en celulares */
+    }
+    .reels-grid {
+        grid-template-columns: 1fr; /* 1 columna en Celulares */
+    }
+    .modal-content.foto-content {
+        padding: 40px 20px;
+    }
+    
+    .foto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-grid img {
+        height: 100%; /* Altura menor en móviles para ahorrar espacio */
+    }
+    
+    .foto-column {
+        flex: 100%;
+        max-width: 100%;
+    }
+    
+    .foto-header h1 {
+        font-size: 2rem;
+    }
+}
