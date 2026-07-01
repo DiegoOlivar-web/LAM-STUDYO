@@ -1,22 +1,3 @@
-// --- VISUALIZACION DEL HEADER ---
-let lastScrollTop = 0;
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Si bajamos (y ya pasamos el tamaño del header), lo ocultamos
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        header.classList.add('hidden');
-    } 
-    // Si subimos, lo mostramos
-    else {
-        header.classList.remove('hidden');
-    }
-    
-    lastScrollTop = scrollTop;
-});
-
 // --- LÓGICA DEL SLIDER ---
 const slides = document.querySelectorAll('.slide');
 const prevBtn = document.getElementById('prev-slide');
