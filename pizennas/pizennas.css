@@ -11,18 +11,17 @@
 .text-side-wrapper {
     width: 100%;
     display: flex;
-    justify-content: flex-end; /* Esto empuja el bloque a la derecha */
-    align-items: center;       /* Centrado vertical */
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .text-side {
     display: flex;
     flex-direction: column;
-    align-items: center;       /* Centra el texto dentro del bloque */
+    align-items: center;
     text-align: center;
     max-width: 500px;
     z-index: 2;
-    /* Eliminamos el margin-top y añadimos margen a la derecha para separar del borde */
     margin-right: 5%;
     margin-top: 100px;
 }
@@ -33,10 +32,10 @@
     margin-bottom: 30px;
     font-weight: 700;
     text-shadow: 
-        0 0 5px rgb(255, 255, 255),    /* Capa 1: Sombra muy difusa cerca */
-        0 0 10px rgb(157, 157, 157),   /* Capa 2: Un poco más grande */
-        0 0 20px rgb(255, 255, 255),   /* Capa 3: Más grande, menos opaca */
-        0 0 40px rgb(255, 255, 255);   /* Capa 4: Resplandor amplio */
+        0 0 5px rgb(255, 255, 255),
+        0 0 10px rgb(157, 157, 157),
+        0 0 20px rgb(255, 255, 255),
+        0 0 40px rgb(255, 255, 255);
 }
 
 .text-side p {
@@ -70,6 +69,7 @@
     display: flex;
     flex-direction: column;
     padding: 0;
+    margin-top: 10px;
 }
 
 .item {
@@ -98,7 +98,7 @@
     margin-bottom: 30px;
 }
 
-/* --- ESTILOS DEL MODAL BASE PORTADA --- */
+/* --- BASE PORTADA --- */
 .modal-container {
     position: fixed;
     top: 0;
@@ -106,8 +106,6 @@
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(5px);
-    
-    /* Control de estado con opacidad para transiciones suaves */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -122,7 +120,6 @@
     box-sizing: border-box;
 }
 
-/* Estado Activo (inyectado por JS) */
 .modal-container.active {
     opacity: 1;
     pointer-events: all;
@@ -137,8 +134,6 @@
     position: relative;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     box-sizing: border-box;
-    
-    /* Efecto de desplazamiento sutil al abrir */
     transform: translateY(-20px);
     transition: transform 0.4s ease;
 }
@@ -159,13 +154,12 @@
     z-index: 100000 !important;
     cursor: pointer;
     line-height: 1 !important;
-    text-shadow: 0 0 10px rgba(0,0,0,0.8); /* Añade sombra por si hay fotos blancas de fondo */
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 .close-modal-btn:hover {
     opacity: 0.7;
 }
 
-/* Estilo para convertir el enlace original en un botón compatible */
 .btn-primary.open-modal-btn {
     background: none;
     border: 1px solid #ffffff;
@@ -213,21 +207,19 @@
     flex-direction: row-reverse;
 }
 
-/* Contenedor que mantiene la proporción */
 .media-container {
     width: 100%;
-    height: 400px; /* Define aquí la altura fija que desees para todas tus tarjetas */
+    height: 400px;
     overflow: hidden;
     position: relative;
     border-radius: 8px;
     background-color: #000;
 }
 
-/* El video se adapta exactamente a la caja */
 .media-container video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Recorta el video para llenar el espacio sin deformarse */
+    object-fit: cover;
     display: block;
 }
 
@@ -252,17 +244,21 @@
     font-weight: 300;
 }
 
+/* --- PORTADA --- */
+.portada {
+    background-image: url('../assets/img/pizennas/portada.png');
+    background-position: -10% 18px;
+    background-size: cover;
+}
+
 /* ==========================================
    ESTILOS ESPECÍFICOS: MODAL REELS
    ========================================== */
-
-/* Contenedor más ancho para acomodar las 3 columnas */
 .modal-content.reels-content {
     max-width: 1100px;
     padding: 50px 60px;
 }
 
-/* Banner Hero (Imagen del celular superior) */
 .modal-hero {
     width: 100%;
     height: 450px;
@@ -276,7 +272,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%; /* Ajusta el encuadre vertical de la imagen */
+    object-position: center 20%;
 }
 
 /* DISEÑO DE REELS */
@@ -294,7 +290,7 @@
 .reels-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px 30px; /* Espaciado vertical y horizontal */
+    gap: 50px 30px;
 }
 
 .reel-item {
@@ -302,10 +298,9 @@
     flex-direction: column;
 }
 
-/* Contenedor que mantiene la proporción */
 .reel-media {
     width: 100%;
-    height: 100%; /* Define aquí la altura fija que desees para todas tus tarjetas */
+    height: 100%;
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -313,20 +308,17 @@
     background-color: #000;
 }
 
-/* El video se adapta exactamente a la caja */
 .reel-media video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Recorta el video para llenar el espacio sin deformarse */
+    object-fit: cover;
     display: block;
 }
 
-/* Opcional: Estilo de los controles (la mayoría de navegadores los adapta automáticamente) */
 .reel-media video::-webkit-media-controls-panel {
-    background-color: rgba(0, 0, 0, 0.5); /* Controles oscuros para que se vean bien */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Textos informativos de cada Reel */
 .reel-info {
     text-align: left;
 }
@@ -351,14 +343,12 @@
    ESTILOS ESPECÍFICOS: MODAL FOTOGRAFÍA
    ========================================== */
 
-/* Contenedor principal de la galería */
 .modal-content.foto-content {
     max-width: 1200px;
     padding: 50px 60px;
-    background-color: #030303; /* Un negro ligeramente más profundo */
+    background-color: #030303;
 }
 
-/* Cabecera del modal fotográfico */
 .foto-header {
     margin-bottom: 50px;
     text-align: center;
@@ -381,19 +371,17 @@
     letter-spacing: 1px;
 }
 
-/* Grilla estilo Masonry (Flexbox Columns) */
 .foto-grid {
     display: grid;
-    /* Esto crea 3 columnas iguales automáticamente */
     grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; /* Espacio entre imágenes */
+    gap: 20px;
     width: 100%;
 }
 
 .foto-grid img {
     width: 100%;
-    height: 100%; /* Altura fija para mantener todas las filas alineadas */
-    object-fit: cover; /* Corta la imagen para que llene el cuadrado sin deformarse */
+    height: 100%;
+    object-fit: cover;
     border-radius: 3px;
     filter: grayscale(15%) brightness(0.9);
     transition: transform 0.4s ease, filter 0.4s ease;
@@ -402,7 +390,7 @@
 .foto-grid video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Recorta el video para llenar el espacio sin deformarse */
+    object-fit: cover;
     display: block;
 }
 
@@ -420,23 +408,20 @@
     gap: 20px;
 }
 
-/* Estilos individuales de cada fotografía */
 .foto-column img {
     width: 100%;
-    height: auto; /* Permite imágenes verticales u horizontales sin deformarse */
+    height: auto;
     display: block;
     border-radius: 3px;
     object-fit: cover;
     background-color: #111;
-    
-    /* Efecto editorial: ligéramente apagadas hasta el hover */
     filter: grayscale(15%) brightness(0.9);
     transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .foto-column img:hover {
     transform: scale(1.02);
-    filter: grayscale(0%) brightness(1); /* Despierta el color de la foto */
+    filter: grayscale(0%) brightness(1);
     z-index: 2;
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -460,21 +445,20 @@
     nav a { margin: 15px 0; }
 
     .hero {
-        padding: 0 10px; /* Reduce el padding lateral en móviles */
-        justify-content: center; /* Opcional: centra verticalmente si el hero es muy alto */
+        padding: 0 10px;
+        justify-content: center;
     }
     .text-side-wrapper {
-        justify-content: center; /* Centramos en pantallas pequeñas */
+        justify-content: center;
     }
 
     .text-side {
-        margin-right: 0; /* Eliminamos el margen derecho que forzaba la posición */
-        padding: 0 20px; /* Damos un poco de aire a los lados */
-        max-width: 90%;  /* Permitimos que ocupe casi todo el ancho */
+        padding: 0 10px;
+        max-width: 80%;
     }
     
     .text-side h2 {
-        font-size: 2.65rem; /* Ajustamos tamaño de fuente para móviles */
+        font-size: 2.65rem;
     }
 
     /* === MODAL === */
@@ -483,47 +467,39 @@
         gap: 20px;
     }
     .modal-content {
-        padding: 50px 20px 30px 20px !important; /* Deja espacio arriba para la X */
+        padding: 50px 20px 30px 20px !important;
     }
     .modal-header h1 {
         font-size: 2rem;
     }
-    /* 1. Pasamos el contenedor a formato vertical y altura automática */
     .item, .item.reverse {
         display: flex !important;
         flex-direction: column !important;
-        height: auto !important; /* Evita que el texto se salga de su caja */
+        height: auto !important;
     }
-
-    /* 2. Le damos una altura absoluta a la imagen para que no desaparezca */
     .item .image {
         width: 100% !important;
         height: 380px !important; 
         min-height: 380px !important;
-        order: 1 !important; /* Fuerza a que la imagen siempre vaya ARRIBA */
+        order: 1 !important;
     }
-
-    /* 3. El contenedor de texto va ABAJO */
     .item .text {
         width: 100% !important;
         height: auto !important;
-        order: 2 !important; /* Fuerza a que el texto siempre vaya ABAJO */
+        order: 2 !important;
         padding: 4rem 1.5rem !important; 
     }
-
-    /* Ajuste de tipografías móviles */
     .text h2 { font-size: 2.5rem !important; }
     .text h3 { font-size: 1.5rem !important; margin-bottom: 20px !important; }
-    
     .text p {
         font-size: 1rem;
         line-height: 1.5;
     }
-    
     .btn-primary {
         font-size: 1rem;
         padding: 10px 20px;
     }
+    .footer-grid { grid-template-columns: 1fr 1fr; text-align: center; }
 }
 
 /* ==========================================
@@ -531,14 +507,14 @@
    ========================================== */
 @media (max-width: 992px) {
     .reels-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en Tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
     .foto-column {
-        flex: 50%; /* Pasa a 2 columnas en Tablets */
+        flex: 50%;
         max-width: 50%;
     }
     .item {
-        height: 450px; /* Reducimos la altura fija para que no quede tanto espacio vacío */
+        height: 450px;
     }
     
     .text {
@@ -552,10 +528,10 @@
         padding: 40px 20px;
     }
     .modal-hero {
-        height: 250px; /* Banner más corto en celulares */
+        height: 250px;
     }
     .reels-grid {
-        grid-template-columns: 1fr; /* 1 columna en Celulares */
+        grid-template-columns: 1fr;
     }
     .modal-content.foto-content {
         padding: 40px 20px;
@@ -566,7 +542,7 @@
     }
 
     .foto-grid img {
-        height: 100%; /* Altura menor en móviles para ahorrar espacio */
+        height: 100%;
     }
     
     .foto-column {

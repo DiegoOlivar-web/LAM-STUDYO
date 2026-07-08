@@ -77,6 +77,17 @@ reels.forEach(reel => {
     if (video && btnPlay) {
         btnPlay.addEventListener('click', () => {
             if (video.paused) {
+                reels.forEach(otherReel => {
+                    const otherVideo = otherReel.querySelector('.video-reel');
+                    const otherBtnPlay = otherReel.querySelector('.play-btn');
+                    
+                    if (otherVideo && otherVideo !== video) {
+                        otherVideo.pause();
+                        if (otherBtnPlay) {
+                            otherBtnPlay.classList.remove('hidden');
+                        }
+                    }
+                });
                 video.play();
                 btnPlay.classList.add('hidden');
             } else {
@@ -99,10 +110,31 @@ const openButtons = document.querySelectorAll(".open-modal-btn");
 const closeButtons = document.querySelectorAll(".close-modal-btn");
 const modals = document.querySelectorAll(".modal-container");
 
+function pauseMediaInModal(modal) {
+    if (!modal) return;
+
+    const mediaElements = modal.querySelectorAll("video, audio");
+
+    mediaElements.forEach((media) => {
+        if (!media.paused) {
+            media.pause();
+        }
+
+        const reelItem = media.closest(".reel-item");
+        if (reelItem) {
+            const btnPlay = reelItem.querySelector(".play-btn");
+            if (btnPlay) {
+                btnPlay.classList.remove("hidden");
+            }
+        }
+    });
+}
+
 function closeModal(modal) {
     if (modal) {
+        pauseMediaInModal(modal);
         modal.classList.remove("active");
-        document.body.style.overflow = ""; // Restaura el scroll de fondo
+        document.body.style.overflow = ""; // Restaurar scroll
     }
 }
 
@@ -112,7 +144,7 @@ openButtons.forEach(button => {
         const modal = document.getElementById(targetId);
         if (modal) {
             modal.classList.add("active");
-            document.body.style.overflow = "hidden"; // Bloquea el scroll de fondo
+            document.body.style.overflow = "hidden"; // Bloquea scroll
         }
     });
 });
