@@ -376,7 +376,8 @@ footer {
 }
 
 .brand-col .logo {
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto 20px;
     text-align: center;
     width: 90px;
