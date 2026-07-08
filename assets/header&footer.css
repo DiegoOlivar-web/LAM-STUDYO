@@ -353,14 +353,14 @@ footer {
 }
 
 .footer-col h4 {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
     letter-spacing: 1px;
 }
 
 .footer-col a, .footer-col p {
     display: block;
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     margin-bottom: 10px;
 }
@@ -391,7 +391,7 @@ footer {
 .copyright {
     text-align: center;
     padding: 20px;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     color: #ffffff;
     border-top: 1px solid #222;
 }
