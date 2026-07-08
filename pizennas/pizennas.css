@@ -521,6 +521,9 @@
         padding: 2rem;
         font-size: 1.2rem;
     }
+    .foto-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 600px) {

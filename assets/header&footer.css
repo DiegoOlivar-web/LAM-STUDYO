@@ -386,6 +386,8 @@ footer {
     width: 90px;
     height: auto;
     object-fit: contain;
+}
+
 .copyright {
     text-align: center;
     padding: 20px;
@@ -411,7 +413,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-
     z-index: 999999999;
     transition: transform 0.3s ease;
     animation: pulse-whatsapp 2s infinite;
