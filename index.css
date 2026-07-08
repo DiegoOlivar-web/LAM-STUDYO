@@ -146,7 +146,7 @@
 /* ================= PHILOSOPHY ================= */
 .philosophy {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.5fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     gap: 40px;
     padding: 20px 5%;
     align-items: center;
@@ -158,7 +158,7 @@
 
 .philosophy-img img {
     width: 100%;
-    height: 100%;
+    height: 600px;
     object-fit: cover;
     display: block;
 }
