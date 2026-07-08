@@ -376,19 +376,16 @@ footer {
 }
 
 .brand-col .logo {
-    display: flex;
-    flex-direction: column;
+    display: block;
     margin: 0 auto 20px;
     text-align: center;
+}
+
+.brand-col .logo img {
+    display: block;
     width: 90px;
     height: auto;
-}
-
-.brand-col p {
-    text-align: center;
-    width: 100%;
-}
-
+    object-fit: contain;
 .copyright {
     text-align: center;
     padding: 20px;
