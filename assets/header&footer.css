@@ -348,6 +348,7 @@ footer {
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
+    text-align: center; 
     padding: 15px 5%;
     gap: 30px;
 }
